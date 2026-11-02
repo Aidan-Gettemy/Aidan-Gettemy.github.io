@@ -1,0 +1,343 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CV | Aidan Gettemy</title>
+  <meta name="description" content="Curriculum vitae of Aidan Gettemy, Ph.D. candidate in Mathematics at UT Dallas.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="site-name" href="index.html">Aidan Gettemy</a>
+    <nav aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="cv.html" aria-current="page">CV</a>
+      <a href="https://github.com/Aidan-Gettemy">GitHub</a>
+      <a href="https://www.linkedin.com/in/aidan-gettemy/">LinkedIn</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="cv-top">
+    <h1>Curriculum Vitae</h1>
+    <a class="btn primary" href="files/Aidan-Gettemy-CV.pdf" download>Download PDF</a>
+  </div>
+  <p class="cv-contact">
+    Aidan Gettemy &middot; Dallas, TX &middot;
+    <a href="mailto:Aidan.Gettemy@utdallas.edu">Aidan.Gettemy@utdallas.edu</a> &middot;
+    <a href="https://www.linkedin.com/in/aidan-gettemy/">LinkedIn</a>
+  </p>
+
+  <h2 id="profile">Profile</h2>
+  <p>
+    Ph.D. candidate in Mathematics at the University of Texas at Dallas (advisor: Dr. Felipe Pereira), graduating
+    February 2027. My research develops computational tools for high-dimensional uncertainty quantification, with a
+    focus on Bayesian inverse problems, MCMC methods, and surrogate modeling, applied to fluid flow in porous media
+    and wind energy. I have experience with large real-world datasets (SCADA), high-dimensional simulation output,
+    and parallel computing on HPC systems.
+  </p>
+
+  <h2 id="education">Education</h2>
+  <div class="entry">
+    <div class="entry-head"><span class="what">Doctor of Philosophy in Mathematics</span><span class="when">Graduation: Feb. 2027</span></div>
+    <div class="where">University of Texas at Dallas, Richardson, TX</div>
+    <div>Dissertation: &ldquo;<em>Uncertainty quantification methods for subsurface flows and wind energy</em>&rdquo;</div>
+    <div>Advisor: Felipe Pereira</div>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="what">Bachelor of Music Performance and Mathematics</span><span class="when">May 2021</span></div>
+    <div class="where">Baylor University, Waco, TX</div>
+    <div><em>Summa Cum Laude</em>, Honors</div>
+  </div>
+
+  <h2 id="skills">Technical Skills</h2>
+  <dl class="skills">
+    <dt>Analysis tools</dt>
+    <dd>Bayesian inverse problems; Markov chain Monte Carlo; uncertainty quantification; surrogate modeling; numerical partial differential equations</dd>
+    <dt>Programming</dt>
+    <dd>Python; MATLAB; C; R; Julia; Bash; LaTeX</dd>
+    <dt>Software</dt>
+    <dd>Git; Linux; SLURM; MPI; Jupyter; VS Code; RStudio; Anaconda; MATLAB Parallel Computing Toolbox; scikit-learn; NumPy; Paraview; OpenFAST</dd>
+    <dt>Data management</dt>
+    <dd>Parquet; SQL; large-scale simulation output management</dd>
+    <dt>Techniques</dt>
+    <dd>Finite difference methods; finite volume methods; Gaussian random field modeling; Gaussian process regression; domain decomposition methods for PDEs</dd>
+  </dl>
+
+  <h2 id="research">Research Experience</h2>
+  <div class="entry">
+    <div class="entry-head"><span class="what">Research Assistant</span><span class="when">Aug. 2024 &ndash; Aug. 2026</span></div>
+    <div class="where">University of Texas at Dallas, Richardson, TX</div>
+    <ul>
+      <li>Developed global-local multiscale MCMC frameworks for Bayesian inverse problems in domain-decomposed Darcy flow models, improving computational efficiency.</li>
+      <li>Investigated prior-preserving proposal mechanisms for Gaussian random fields parameterized by Karhunen&ndash;Lo&egrave;ve expansions.</li>
+      <li>Evaluated MCMC convergence using R-hat, coverage, reconstruction error, and posterior fields.</li>
+      <li>Developed and maintained MATLAB/Python code and ran large-scale experiments on university HPC systems (SLURM, MPI, bash), managing simulation outputs and reproducible experiment records across projects.</li>
+      <li>Presented results at conferences and in weekly meetings with international collaborators, helped onboard junior researchers, and contributed to manuscript drafts.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="what">Engineering Intern</span><span class="when">June &ndash; Aug. 2024</span></div>
+    <div class="where">Roux Institute, Portland, ME</div>
+    <ul>
+      <li>Built Python SCADA data pipelines (pandas, MATLAB, Parquet) and filtering and visualization tools for scalable wind farm performance analysis.</li>
+      <li>Studied wake-steering bias and turbine-to-turbine flow interactions in utility-scale SCADA data, using regression to identify yaw misalignment biases and improve alignment of steered and unsteered datasets.</li>
+      <li>Developed consensus, random forest, and Gaussian process models to estimate unobserved turbine states and reconstruct spatial wind fields.</li>
+      <li>Collaborated with Roux Institute and WindESCo teams, presented at a research conference, and contributed major analysis to a journal manuscript now under review.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="what">Graduate Researcher</span><span class="when">Aug. 2023 &ndash; Aug. 2024</span></div>
+    <div class="where">University of Texas at Dallas, Richardson, TX &middot; Mentors: Susan Minkoff and John Zweck</div>
+    <ul>
+      <li>Simulated wind turbine behavior under varying inflow conditions and leading-edge erosion severity using OpenFAST to support condition-monitoring model development.</li>
+      <li>Built a MATLAB framework to automate simulation runs, data processing, and analysis of OpenFAST outputs.</li>
+      <li>Evaluated supervised learning and Gaussian process emulator models for erosion damage detection, contributing analysis, figures, and manuscript text to the published <em>Wind Energy Science</em> article.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="what">Computational Research</span><span class="when">June &ndash; Aug. 2022</span></div>
+    <div class="where">University of Texas at Dallas, Richardson, TX &middot; Mentor: Michael Zhang</div>
+    <ul>
+      <li>Studied spin-glass models and computational approaches for biological system identification with the UTD Computational Biology Lab.</li>
+      <li>Mentored an undergraduate student researcher on project context, modeling concepts, and research workflow.</li>
+    </ul>
+  </div>
+
+  <h2 id="publications">Publications</h2>
+  <p>
+    <span class="small">Published:</span><br>
+    Gettemy, A., Minkoff, S., Zweck, J., and Spiller, E., &ldquo;Classification of Leading-Edge Erosion Severity via Machine Learning Surrogate Models,&rdquo; <em>Wind Energy Science</em>. Published September 10, 2026.
+    <a href="https://doi.org/10.5194/wes-11-3377-2026">doi:10.5194/wes-11-3377-2026</a>
+  </p>
+  <p>
+    <span class="small">In review:</span><br>
+    Gettemy, A., Abbatessa, L., and Post, N., &ldquo;Evaluating Yawed Turbine Transfer Functions from SCADA Data.&rdquo; Preprint available in <em>Wind Energy Science</em>.
+  </p>
+  <p>
+    <span class="small">In preparation:</span><br>
+    Gettemy, A., Borges, M., Guiraldello, R., and Pereira, F., &ldquo;Global-Local Anchored Multiscale Method for Inverse Modeling of High-Dimensional PDEs.&rdquo;
+  </p>
+
+  <h2 id="projects">Academic Projects</h2>
+  <p class="small">Code for these projects is on <a href="https://github.com/Aidan-Gettemy">GitHub</a>.</p>
+  <div class="entry">
+    <div class="entry-head"><span class="what">Karhunen&ndash;Lo&egrave;ve Expansion and Darcy Flow Adjoint Problem</span><span class="when">July 2026</span></div>
+    <div class="where">Personal project</div>
+    <ul>
+      <li>Derived the algorithm to compute the gradient of the pressure-error function with respect to the KLE coefficients using finite volumes and an adjoint formulation.</li>
+      <li>Implemented the finite volume adjoint in MATLAB, tested it on optimization with the MATLAB Optimization Toolbox, and tested a Bayesian inversion version using Hamiltonian Monte Carlo in the MATLAB Statistics and Machine Learning Toolbox, verifying the usefulness of gradient information.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="what">Portfolio Optimization and Risk Management</span><span class="when">April 2025</span></div>
+    <div class="where">Class: MATH <em>Stochastic Dynamic Programming</em></div>
+    <ul>
+      <li>Formulated and solved portfolio optimization problems using Markowitz mean-variance theory to analyze the risk-return tradeoff in investment allocation.</li>
+      <li>Implemented optimization models with MOSEK and presented results demonstrating how constraints and risk preferences affect optimal portfolio selection.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="what">Bayesian Inverse Methods for Infectious Disease Forecasting</span><span class="when">Dec. 2024</span></div>
+    <div class="where">Class: STAT <em>Bayesian Data Analysis</em></div>
+    <ul>
+      <li>Implemented Bayesian compartmental growth models for epidemic forecasting, using MCMC methods to estimate uncertain model parameters from observed case data.</li>
+      <li>Conducted R/C++ analysis and rolling-origin cross-validation to evaluate predictive performance across sequential forecast horizons.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="what">Comparing Machine Learning Approaches for Wind Turbine Blade Damage Detection</span><span class="when">April 2024</span></div>
+    <div class="where">Class: PHYS <em>Big Data and Machine Learning for Scientific Discovery</em></div>
+    <ul>
+      <li>Applied MATLAB machine learning tools to model wind turbine erosion patterns using supervised regression and classification methods.</li>
+      <li>Compared neural networks, decision trees, linear models, discriminant analysis, Naive Bayes, random forests, and error-correcting output code classifiers, identifying random forest as the best-performing approach after hyperparameter tuning.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="what">Multi-scale Method C Coding Project</span><span class="when">Aug. &ndash; Dec. 2023</span></div>
+    <div class="where">Class: MATH <em>Scientific Computing</em></div>
+    <ul>
+      <li>Developed a finite-difference solver for elliptic PDEs in C for modeling Darcy flow in porous media.</li>
+      <li>Implemented an MPI-based domain decomposition algorithm to partition the computational grid across processors and accelerate PDE solves on HPC systems.</li>
+      <li>Evaluated solver performance by comparing computational speed, accuracy, and scalability across serial and parallel implementations.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="what">Hurricane Database Construction</span><span class="when">June 2021</span></div>
+    <div class="where">Personal project</div>
+    <ul>
+      <li>Built a relational SQL database for NOAA hurricane records, supporting structured analysis of historical storm data, and developed Python workflows for data extraction, cleaning, API-based collection, and exploratory visualization.</li>
+    </ul>
+  </div>
+
+  <h2 id="presentations">Presentations</h2>
+  <div class="talk"><span class="when">Sep. 16, 2026 &middot; Richardson, TX</span>Mini-symposium presentation, &ldquo;Progress on the Global-Local Method for High-Dimensional Inverse Problems,&rdquo; UTD Comet Computing Conference (CCC) 2026.</div>
+  <div class="talk"><span class="when">April 17, 2026 &middot; Richardson, TX</span>Campus seminar, &ldquo;Multi-scale MCMC Methods for PDE-based Bayesian Inverse Problems,&rdquo; UTD STAT Exchange Graduate Seminar.</div>
+  <div class="talk"><span class="when">March 26, 2026 &middot; Richardson, TX</span>Campus seminar, &ldquo;A Global-Local Multi-scale MCMC Method for PDE-based Bayesian Inverse Problems,&rdquo; UTD Computational Science Seminar.</div>
+  <div class="talk"><span class="when">March 22&ndash;25, 2026 &middot; Minneapolis, MN</span>Mini-symposium presentation, &ldquo;A Global&ndash;Local Multiscale MCMC Method for Domain-Decomposed Bayesian Inference,&rdquo; SIAM Conference on Uncertainty Quantification (UQ26).</div>
+  <div class="talk"><span class="when">Dec. 8&ndash;12, 2025 &middot; Houston, TX</span>Poster, &ldquo;Global&ndash;Local Multiscale MCMC for Domain-Decomposed Bayesian Inference,&rdquo; CBMS Conference: Research at the Interface of Applied Mathematics and Machine Learning.</div>
+  <div class="talk"><span class="when">Oct. 15&ndash;17, 2025 &middot; Richardson, TX</span>Mini-symposium presentation, &ldquo;Evaluating Yawed Turbine Transfer Functions from SCADA Data,&rdquo; NAWEA/WindTech 2025.</div>
+  <div class="talk"><span class="when">Sep. 26&ndash;28, 2025 &middot; Austin, TX</span>Mini-symposium presentation, &ldquo;Fast converging Markov chain Monte Carlo methods for high dimensional inverse problems,&rdquo; SIAM Texas-Louisiana Section Annual Meeting.</div>
+  <div class="talk"><span class="when">Sep. 17, 2025 &middot; Richardson, TX</span>Mini-symposium presentation, &ldquo;Fast converging Markov chain Monte Carlo methods for high dimensional inverse problems,&rdquo; UTD Comet Computing Conference (CCC) 2025.</div>
+  <div class="talk"><span class="when">Aug. 11&ndash;15, 2025 &middot; Houston, TX</span>Poster, &ldquo;Domain decomposed Bayesian inference,&rdquo; ChAMELEON Summer School.</div>
+  <div class="talk"><span class="when">March 3&ndash;7, 2025 &middot; Fort Worth, TX</span>Mini-symposium presentation, &ldquo;Multi-scale MCMC Sampling,&rdquo; SIAM Conference on Computational Science and Engineering (CSE25).</div>
+  <div class="talk"><span class="when">Oct. 11&ndash;13, 2024 &middot; Waco, TX</span>Mini-symposium presentation, &ldquo;A Digital Twin Approach for Monitoring Wind Turbine Erosion,&rdquo; SIAM Texas-Louisiana Section Annual Meeting.</div>
+  <div class="talk"><span class="when">May 10, 2024 &middot; Richardson, TX</span>Research symposium presentation, &ldquo;Digital Twins for Wind Energy Applications,&rdquo; 3D 4D Seismic Consortium Yearly Research Meeting.</div>
+  <div class="talk"><span class="when">Oct. 14, 2022 &middot; Richardson, TX</span>Campus seminar, &ldquo;Introduction to the Sparse Identification of Nonlinear Dynamics,&rdquo; UTD Computational Science Seminar.</div>
+
+  <h2 id="honors">Honors and Awards</h2>
+  <div class="entry"><div class="entry-head"><span class="what">Student Travel Award, CBMS Conference</span><span class="when">Dec. 2025</span></div><div class="where">AAML Workshop Student Travel Award, University of Houston, Houston, TX</div></div>
+  <div class="entry"><div class="entry-head"><span class="what">Dean&rsquo;s Award for Outstanding Student in Music Performance</span><span class="when">April 2020</span></div><div class="where">Baylor University, Waco, TX</div></div>
+  <div class="entry"><div class="entry-head"><span class="what">Membership in Pi Kappa Lambda Music Honor Society</span><span class="when">April 2020</span></div><div class="where">Baylor University, Waco, TX</div></div>
+  <div class="entry"><div class="entry-head"><span class="what">Round Top Festival Cellist</span><span class="when">June &ndash; July 2019</span></div><div class="where">Round Top Festival Institute, Round Top, TX</div></div>
+  <div class="entry"><div class="entry-head"><span class="what">University Dean&rsquo;s List</span><span class="when">Dec. 2017 &ndash; May 2021</span></div><div class="where">Baylor University, Waco, TX</div></div>
+  <div class="entry"><div class="entry-head"><span class="what">President&rsquo;s Gold Academic Scholarship</span><span class="when">Aug. 2017 &ndash; May 2021</span></div><div class="where">Baylor University, Waco, TX</div></div>
+  <div class="entry"><div class="entry-head"><span class="what">Getterman Music Scholarship</span><span class="when">Aug. 2017 &ndash; May 2021</span></div><div class="where">Baylor University, Waco, TX</div></div>
+
+  <h2 id="training">Professional Training</h2>
+  <div class="entry"><div class="entry-head"><span class="what">Applied Mathematics and Machine Learning CBMS Conference</span><span class="when">Dec. 8&ndash;12, 2025</span></div><div class="where">University of Houston, Houston, TX</div></div>
+  <div class="entry"><div class="entry-head"><span class="what">ChAMELEON Summer School</span><span class="when">Aug. 11&ndash;15, 2025</span></div><div class="where">University of Houston, Houston, TX</div></div>
+  <div class="entry"><div class="entry-head"><span class="what">University of Houston Graduate Courses</span><span class="when">Aug. &ndash; Dec. 2021</span></div><div class="where">University of Houston, Houston, TX</div></div>
+  <div class="entry"><div class="entry-head"><span class="what">Introduction to Scientific Computing</span><span class="when">June &ndash; Aug. 2021</span></div><div class="where">University of Washington, Seattle, WA</div></div>
+
+  <h2 id="teaching">Teaching Experience</h2>
+  <div class="entry">
+    <div class="entry-head"><span class="what">Teaching Assistant, Natural Sciences and Mathematics</span><span class="when">Jan. 2022 &ndash; May 2024; Aug. &ndash; Dec. 2026</span></div>
+    <div class="where">University of Texas at Dallas, Richardson, TX</div>
+    <p style="margin:0.3rem 0 0; font-size:0.97rem;">Across appointments: ran problem sessions, held weekly office hours, graded, and supported students through Canvas and Blackboard. Completed the Graduate Reflective Teaching Seminar and departmental TA training.</p>
+    <ul>
+      <li>Fall 2026: MATH 2414 Integral Calculus (assisted; two sections of about 20) and MATH 6313 Numerical Analysis (graded; about 20 graduate students)</li>
+      <li>Aug. 2022 &ndash; May 2024: MATH 3310 Theoretical Concepts of Calculus (graded; about 80) and MATH 3311 Abstract Algebra I (graded; about 40)</li>
+      <li>Spring 2022: MATH 2419 Calculus II, Honors (assisted; led a weekly two-hour problem session, wrote study guides, coordinated exams, graded)</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="what">Grading Assistant</span><span class="when">Aug. 2020 &ndash; May 2021</span></div>
+    <div class="where">Baylor University, Waco, TX</div>
+    <ul>
+      <li>Graded undergraduate mathematics assignments in combinatorics, algebra, and linear algebra, providing consistent evaluation and feedback as an undergraduate music major.</li>
+      <li>Managed assignment materials and grading records using Canvas LMS, spreadsheets, and Adobe Acrobat to support course organization and instructor workflows.</li>
+    </ul>
+  </div>
+
+  <h2 id="employment">Employment History (Music Related)</h2>
+  <div class="entry">
+    <div class="entry-head"><span class="what">Contractor</span><span class="when">Oct. 2021 &ndash; Jan. 2022</span></div>
+    <div class="where">Katy ISD, Katy, TX</div>
+    <ul>
+      <li>Led a middle school clinic for students preparing for Texas Music Educators Association Region 23 honor orchestra and adjudicated high school orchestra auditions.</li>
+      <li>Taught private cello lessons at Haskett Junior High School.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="what">Contractor</span><span class="when">Oct. 2021 &ndash; Jan. 2022</span></div>
+    <div class="where">Music &amp; Arts, Sugar Land, TX</div>
+    <ul>
+      <li>Provided private cello instruction for beginning and intermediate students.</li>
+      <li>Designed individualized lesson plans and documented student progress to support consistent technical growth and prepare future lessons.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="what">Teacher</span><span class="when">Sep. 2019 &ndash; May 2021</span></div>
+    <div class="where">Central Texas String Academy, Waco, TX</div>
+    <ul>
+      <li>Taught private and group cello lessons using Suzuki-based principles, developing individualized exercises, lesson materials, and practice notes to support student progress.</li>
+      <li>Supported student recitals during rehearsal preparation and concert.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="what">Intern / Cello Performer</span><span class="when">Sep. 2017 &ndash; May 2021</span></div>
+    <div class="where">Waco Symphony, Waco, TX</div>
+    <ul>
+      <li>Prepared and performed orchestral repertoire for approximately three concerts per semester, while supporting ensemble rehearsals and community outreach performances.</li>
+    </ul>
+  </div>
+
+  <h2 id="service">Service</h2>
+
+  <h3>Service to professional organizations</h3>
+  <div class="entry"><div class="entry-head"><span class="what">Symposium Chair</span><span class="when">Mar. 24, 2026</span></div><div class="where">SIAM Conference on Uncertainty Quantification 2026, C5-Surrogate Models</div></div>
+  <div class="entry"><div class="entry-head"><span class="what">Symposium Co-Organizer</span><span class="when">Sep. 26, 2025</span></div><div class="where">SIAM Texas-Louisiana Section Annual Meeting &middot; Mini-symposium: &ldquo;Domain Decomposition for Coupling and Inverse Problems&rdquo;</div></div>
+  <div class="entry">
+    <div class="entry-head"><span class="what">SIAM Student Volunteer</span><span class="when">Mar. 4, 2025</span></div>
+    <div class="where">SIAM CSE, Fort Worth, TX</div>
+    <ul><li>Helped SIAM employees manage the desk: late registration, badges, and directions to rooms.</li></ul>
+  </div>
+  <div class="entry"><div class="entry-head"><span class="what">Symposium Co-Organizer</span><span class="when">Oct. 11, 2024</span></div><div class="where">SIAM Texas-Louisiana Section Annual Meeting &middot; Mini-symposium: &ldquo;Applications and Methods for Digital Twins&rdquo;</div></div>
+
+  <h3>Service to department</h3>
+  <div class="entry">
+    <div class="entry-head"><span class="what">Workshop Co-Organizer</span><span class="when">Mar. 2026</span></div>
+    <div class="where">UTD-SMU SIAM Student Chapter, <em>Introduction to Variational Auto-Encoders</em></div>
+    <ul>
+      <li>Co-organized a technical workshop introducing variational autoencoders to graduate students and early-career researchers.</li>
+      <li>Coordinated event logistics, including room reservation, advertising, outreach, and communication with student participants.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="what">Workshop Co-Organizer</span><span class="when">Feb. 2026</span></div>
+    <div class="where">UTD-SMU SIAM Student Chapter, <em>Physics Informed Neural Networks using MATLAB</em></div>
+    <ul>
+      <li>Communicated with multiple stakeholders at MathWorks, the SIAM Student Chapter, and the UTD MathWorks ambassador.</li>
+      <li>Raised awareness of the event, advertised through email channels, and helped to arrange logistics.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="what">Conference Volunteer</span><span class="when">Mar. 2023</span></div>
+    <div class="where">University of Texas at Dallas &middot; &ldquo;Advances in Stat. and Comp. Methods for Analysis of Biomedical, Genetic, and Omics Data&rdquo;</div>
+    <ul>
+      <li>Supported conference operations by preparing event spaces, setting up poster-session areas, posting directional signage, and guiding attendees to reception locations.</li>
+      <li>Contributed to conference side-programming by performing cello duets before the banquet reception.</li>
+    </ul>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="what">Conference Volunteer</span><span class="when">Feb. 2022</span></div>
+    <div class="where">University of Texas at Dallas &middot; &ldquo;Texas Geometry and Topology Conference&rdquo;</div>
+    <ul><li>Assisted with conference operations, including room setup, poster-session preparation, visitor directions, and transportation support for invited guests.</li></ul>
+  </div>
+
+  <h3>Service to university</h3>
+  <div class="entry">
+    <div class="entry-head"><span class="what">Co-President, UTD SIAM Student Chapter</span><span class="when">Sep. 2023 &ndash; Sep. 2025</span></div>
+    <div class="where">Richardson, TX</div>
+    <ul>
+      <li>Presided over meetings, worked with sponsoring faculty members to organize colloquia, helped organize food logistics and transportation to meetings, and promoted events to increase public awareness.</li>
+      <li>Organized multiple events per year, including presentations from Department of Energy lab scientists, resume-building sessions, interviews with mathematical alumni, and a museum field trip.</li>
+    </ul>
+  </div>
+
+  <h3>Service to community</h3>
+  <div class="entry">
+    <div class="entry-head"><span class="what">Musician, UTD Musica Nova Chamber Ensemble</span><span class="when">March 2022 &ndash; May 2026</span></div>
+    <div class="where">Richardson, TX</div>
+    <ul><li>Performed in semesterly chamber ensemble concerts, contributing to campus arts programming through weekly rehearsals and public performances.</li></ul>
+  </div>
+
+  <h2 id="memberships">Professional Memberships</h2>
+  <div class="entry"><div class="entry-head"><span class="what">Society for Industrial and Applied Mathematics (SIAM)</span><span class="when">Sep. 2022 &ndash; present</span></div></div>
+
+  <h2 id="other">Languages, Citizenship, Interests</h2>
+  <p><strong>Language:</strong> English (native). <strong>Citizenship:</strong> USA.</p>
+  <p><strong>Interests:</strong> cello, running, hiking, birding, plants, art, reading.</p>
+
+  <p class="updated">Last updated: November 2026</p>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Aidan Gettemy</span>
+    <span><a href="mailto:Aidan.Gettemy@utdallas.edu">Aidan.Gettemy@utdallas.edu</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
+

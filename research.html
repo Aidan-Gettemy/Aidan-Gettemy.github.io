@@ -1,0 +1,120 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research | Aidan Gettemy</title>
+  <meta name="description" content="Research by Aidan Gettemy: Bayesian inverse problems, surrogate modeling, and NTF modeling for subsurface flow and wind energy.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="site-name" href="index.html">Aidan Gettemy</a>
+    <nav aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="research.html" aria-current="page">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="cv.html">CV</a>
+      <a href="https://github.com/Aidan-Gettemy">GitHub</a>
+      <a href="https://www.linkedin.com/in/aidan-gettemy/">LinkedIn</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <h1>Research</h1>
+  <p class="lede">
+    My work asks how to learn from physical models and sensor data when the unknowns are high-dimensional and
+    the simulations are expensive. Below are three projects, with my collaborators, our goals, and my role.
+  </p>
+
+  <section class="project" id="bayesian">
+    <h2>Bayesian inverse problems</h2>
+    <p class="meta">With Felipe Pereira (UT Dallas), Marcio Borges (LNCC), and R. Guiraldello &middot; Paper in preparation</p>
+    <p>
+      <strong>The problem.</strong> Subsurface properties such as permeability cannot be measured everywhere, so we
+      infer them from limited pressure data. A Bayesian approach returns a whole distribution of plausible fields
+      rather than one guess, but sampling that distribution with standard MCMC becomes very slow when the field has
+      very many unknowns.
+    </p>
+    <p>
+      <strong>Our goal.</strong> To build a global-local multiscale MCMC method for domain-decomposed Darcy flow
+      models that explores the posterior faster, while keeping the sampler faithful to the prior on the underlying
+      Gaussian random field.
+    </p>
+    <p>
+      <strong>What I contributed.</strong> I developed and implemented the sampling framework, including
+      prior-preserving proposal mechanisms for fields parameterized by Karhunen&ndash;Lo&egrave;ve expansions. I ran
+      the large-scale experiments on a university HPC cluster (SLURM, MPI) and evaluated convergence with R-hat,
+      coverage, reconstruction error, and the posterior fields themselves. I have presented this work at SIAM UQ26,
+      the SIAM Texas&ndash;Louisiana Section meeting, and other venues.
+    </p>
+    <ul class="links">
+      <li><a class="todo-link" href="https://github.com/Aidan-Gettemy/REPO-NAME">GitHub: Bayesian inversion code</a></li>
+      <li><a href="publications.html#in-preparation">Manuscript (in preparation)</a></li>
+    </ul>
+  </section>
+
+  <section class="project" id="surrogate">
+    <h2>Surrogate modeling</h2>
+    <p class="meta">With Susan Minkoff, John Zweck, and Elaine Spiller &middot; <em>Wind Energy Science</em>, 2026</p>
+    <p>
+      <strong>The problem.</strong> Erosion on the leading edge of a wind turbine blade degrades performance, and
+      catching it early matters. Physics-based simulations can show how erosion changes a turbine's behavior, but
+      they are too slow to run repeatedly in a monitoring setting.
+    </p>
+    <p>
+      <strong>Our goal.</strong> To use machine learning surrogate models, trained on simulations, to classify the
+      severity of leading-edge erosion, as a step toward digital-twin condition monitoring.
+    </p>
+    <p>
+      <strong>What I contributed.</strong> I simulated turbine behavior under varying inflow conditions and erosion
+      severity with OpenFAST, and wrote a MATLAB framework to automate the simulations and the processing of their
+      output. I then evaluated supervised learning and Gaussian process emulator models for detecting erosion, and
+      contributed the analysis, figures, and manuscript text.
+    </p>
+    <ul class="links">
+      <li><a href="https://doi.org/10.5194/wes-11-3377-2026">Paper (<em>Wind Energy Science</em>)</a></li>
+      <li><a class="todo-link" href="https://github.com/Aidan-Gettemy/REPO-NAME">GitHub: surrogate modeling code</a></li>
+    </ul>
+  </section>
+
+  <section class="project" id="ntf">
+    <h2>NTF modeling</h2>
+    <p class="meta">With L. Abbatessa and Nathan Post &middot; Roux Institute and WindESCo &middot; Under review</p>
+    <p>
+      <strong>The problem.</strong> Wake steering deliberately yaws an upstream turbine to improve the output of the
+      turbines behind it, but what a turbine actually does can differ from what was planned. Operational SCADA data records what
+      happened, and it is noisy and incomplete.
+    </p>
+    <p>
+      <strong>Our goal.</strong> To evaluate yawed turbine transfer functions from SCADA data, and to understand the
+      biases that creep in when comparing steered and unsteered turbines.
+    </p>
+    <p>
+      <strong>What I contributed.</strong> I built Python data pipelines for utility-scale SCADA data, along with
+      filtering and visualization tools. I used regression-based analysis to identify yaw misalignment biases, and
+      developed consensus, random forest, and Gaussian process models to estimate unobserved turbine states and
+      reconstruct spatial wind fields. I presented the results at NAWEA/WindTech 2025.
+    </p>
+    <ul class="links">
+      <li><a class="todo-link" href="https://wes.copernicus.org/preprints/">Manuscript (preprint)</a></li>
+      <li><a class="todo-link" href="https://github.com/Aidan-Gettemy/REPO-NAME">GitHub: SCADA analysis code</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Aidan Gettemy</span>
+    <span><a href="mailto:Aidan.Gettemy@utdallas.edu">Aidan.Gettemy@utdallas.edu</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
+
