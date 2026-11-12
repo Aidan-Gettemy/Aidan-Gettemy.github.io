@@ -27,33 +27,36 @@
 
   <h1>Research</h1>
   <p class="lede">
-    My work asks how to learn from physical models and sensor data when the unknowns are high-dimensional and
-    the simulations are expensive. Below are three projects, with my collaborators, our goals, and my role.
+    One unifying theme in my research projects is working with high-dimensional physics based problems
+    with the goal to perform uncertainty quantification and parameter identification.
   </p>
 
   <section class="project" id="bayesian">
     <h2>Bayesian inverse problems</h2>
-    <p class="meta">With Felipe Pereira (UT Dallas), Marcio Borges (LNCC), and R. Guiraldello &middot; Paper in preparation</p>
+    <p class="meta">With Felipe Pereira (University of Texas at Dallas), Marcio Borges (Laboratório Nacional de Computação Científica), and Rafael Guiraldello &middot; Paper in preparation</p>
     <p>
-      <strong>The problem.</strong> Subsurface properties such as permeability cannot be measured everywhere, so we
-      infer them from limited pressure data. A Bayesian approach returns a whole distribution of plausible fields
-      rather than one guess, but sampling that distribution with standard MCMC becomes very slow when the field has
-      very many unknowns.
+      <strong>The problem.</strong> Subsurface properties such as permeability cannot be measured everywhere, so they are infered 
+      from limited pressure data. In the Bayesian approach, a Gaussian random field prior is used for the 
+      log-permeability field in 2 or 3 spatial dimensions. Using the coefficients (&theta;) of the Karhunen&ndash;Lo&egrave;ve expansions discretized random field as the 
+      stochastic parameter, the Bayesian inversion then returns a distribution of plausible fields that match the data. 
+      However, sampling that distribution with standard MCMC methods, such as pCN, becomes very slow when the field follows a 
+      hierarchical distribution, with two additonal parameters; (&beta;) which controls the field level and (&rho;) which controls the heterogeneity.
     </p>
     <p>
-      <strong>Our goal.</strong> To build a global-local multiscale MCMC method for domain-decomposed Darcy flow
-      models that explores the posterior faster, while keeping the sampler faithful to the prior on the underlying
-      Gaussian random field.
+      <strong>Our goal.</strong> To build an efficient MCMC method, we first recognized that the heirarchical prior suffered from 
+      severe non-uniqueness, where several combinations of parameters &theta;, &beta;, and &rho; led to identical simulated data. We 
+      sought a construction to alleviate this lack of uniquness and recover stable MCMC sampling.
     </p>
     <p>
-      <strong>What I contributed.</strong> I developed and implemented the sampling framework, including
-      prior-preserving proposal mechanisms for fields parameterized by Karhunen&ndash;Lo&egrave;ve expansions. I ran
-      the large-scale experiments on a university HPC cluster (SLURM, MPI) and evaluated convergence with R-hat,
-      coverage, reconstruction error, and the posterior fields themselves. I have presented this work at SIAM UQ26,
-      the SIAM Texas&ndash;Louisiana Section meeting, and other venues.
+      <strong>Our approach.</strong> We use one additional measurement, the effective permeability of the entire sample, 
+      along with an offline curve constructed by Monte Carlo sampling to construct an empirical curve
+      that relates &beta; to a function of &rho;. Eliminating one parameter removes the lack of uniquness, which hampers convergence
+      of the multi-chain R-hat metric, and allows for efficient sampling. I ran experiments on the University of Texas GanymedeII and Juno machines (SLURM, MPI) 
+      to simulate the Markov chains and analyze postserior metrics, including convergence with R-hat,
+      coverage, reconstruction error, and the posterior fields themselves.
     </p>
     <ul class="links">
-      <li><a class="todo-link" href="https://github.com/Aidan-Gettemy/REPO-NAME">GitHub: Bayesian inversion code</a></li>
+      <li><a class="link" href="https://github.com/Aidan-Gettemy/rho_beta_mcmc_studies">GitHub: Bayesian inversion code</a></li>
       <li><a href="publications.html#in-preparation">Manuscript (in preparation)</a></li>
     </ul>
   </section>
@@ -63,46 +66,58 @@
     <p class="meta">With Susan Minkoff, John Zweck, and Elaine Spiller &middot; <em>Wind Energy Science</em>, 2026</p>
     <p>
       <strong>The problem.</strong> Erosion on the leading edge of a wind turbine blade degrades performance, and
-      catching it early matters. Physics-based simulations can show how erosion changes a turbine's behavior, but
-      they are too slow to run repeatedly in a monitoring setting.
+      catching it early matters. Designing a machine-learning based system for continuous condition monitoring by 
+      time-series sensor outputs requires a large, comprehensive data set in order to ensure accuracy under 
+      different loading conditions and eroded states. 
+      Repeatedly quuerying the full, physics-based simulator quickly becomes impractical. Thus, we adopt a surrogate model 
+      based approach.
     </p>
     <p>
-      <strong>Our goal.</strong> To use machine learning surrogate models, trained on simulations, to classify the
-      severity of leading-edge erosion, as a step toward digital-twin condition monitoring.
+      <strong>Our goal.</strong> We train a multi-dimensional emulator on a carefully selected set of ground-truth simulations. 
+      Then, once trained, the emulator is essentially free to generate new samples given a new input setting. We validate this 
+      approach by training two competing classifiers; one trained on full simulation data and another purely on emulated data. 
+      We find that the well-trained emulator performs as well as the full simulator at this task, 
+      despite taking only 1/10,000 the time to predict a new data point. 
     </p>
     <p>
-      <strong>What I contributed.</strong> I simulated turbine behavior under varying inflow conditions and erosion
-      severity with OpenFAST, and wrote a MATLAB framework to automate the simulations and the processing of their
-      output. I then evaluated supervised learning and Gaussian process emulator models for detecting erosion, and
-      contributed the analysis, figures, and manuscript text.
+      <strong>Our approach.</strong> We simulated turbine behavior under varying inflow conditions and erosion
+      severity with OpenFAST. To assist this task, I wrote a new MATLAB framework to automate the simulations and the
+       processing of their output. I then evaluated supervised learning and Gaussian process emulator models for detecting 
+       erosion. We envision this as a step toward 
+      using emulators in building a full digital-twin for condition monitoring.
     </p>
     <ul class="links">
       <li><a href="https://doi.org/10.5194/wes-11-3377-2026">Paper (<em>Wind Energy Science</em>)</a></li>
-      <li><a class="todo-link" href="https://github.com/Aidan-Gettemy/REPO-NAME">GitHub: surrogate modeling code</a></li>
+      <li><a class="link" href="https://github.com/Aidan-Gettemy/Classification-of-Leading-Edge-Erosion-Severity-via-Machine-Learning-Surrogate-Models">GitHub: surrogate modeling code</a></li>
     </ul>
   </section>
 
   <section class="project" id="ntf">
     <h2>NTF modeling</h2>
-    <p class="meta">With L. Abbatessa and Nathan Post &middot; Roux Institute and WindESCo &middot; Under review</p>
+    <p class="meta">With L. Abbatessa and Nathan Post &middot; Under review</p>
     <p>
       <strong>The problem.</strong> Wake steering deliberately yaws an upstream turbine to improve the output of the
-      turbines behind it, but what a turbine actually does can differ from what was planned. Operational SCADA data records what
-      happened, and it is noisy and incomplete.
+      turbines behind it. Operational SCADA data records measurements such as nacelle heading, wind speed, and power generation.
+      In order to evaluate the changes to power generation to the individual turbines effected by a wake steering move, 
+      the changes to sensor measurements need to be able to be read without bias from the steering itself.
     </p>
     <p>
       <strong>Our goal.</strong> To evaluate yawed turbine transfer functions from SCADA data, and to understand the
       biases that creep in when comparing steered and unsteered turbines.
     </p>
     <p>
-      <strong>What I contributed.</strong> I built Python data pipelines for utility-scale SCADA data, along with
-      filtering and visualization tools. I used regression-based analysis to identify yaw misalignment biases, and
-      developed consensus, random forest, and Gaussian process models to estimate unobserved turbine states and
-      reconstruct spatial wind fields. I presented the results at NAWEA/WindTech 2025.
+      <strong>Our approach.</strong> We used filtering to remove implausible data and consensus estimation methods to calculate 
+      the sensor measurements that a turbine would see facing the wind from that turbines neighbors. We train a machine learning model
+      to predict the true sensor measurement during time intervals where the turbines are steered into the wind from the consensus values.
+      With this model, we can then predict the difference between aligned sensor values (from the model) and actual measurements (with bias) 
+      during the intervals where the wake steering is active. Our analysis and uncertainty quantification results found signs of 
+      sensor bias during steering, but also identified the large spatio-temporal effects across the farm that impact the signal 
+      to noise ratio in the data, complicating the analysis of bias itself.
+      I presented the results at NAWEA/WindTech 2025.
     </p>
     <ul class="links">
-      <li><a class="todo-link" href="https://wes.copernicus.org/preprints/">Manuscript (preprint)</a></li>
-      <li><a class="todo-link" href="https://github.com/Aidan-Gettemy/REPO-NAME">GitHub: SCADA analysis code</a></li>
+      <li><a class="link" href="https://wes.copernicus.org/preprints/wes-2025-223/">Manuscript (preprint)</a></li>
+      <li><a class="link" href="https://github.com/Aidan-Gettemy/Notebooks-for-Evaluating-Yawed-Turbine-Transfer-Functions-from-SCADA-Data-">GitHub: SCADA analysis code</a></li>
     </ul>
   </section>
 
