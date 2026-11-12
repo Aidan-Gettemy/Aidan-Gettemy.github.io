@@ -27,33 +27,40 @@
 
   <h1>Research</h1>
   <p class="lede">
-    One unifying theme in my research projects is working with high-dimensional, physics-based problems
-    with the goal of performing uncertainty quantification and parameter identification.
+    The unifying theme across my research projects is the challenge of high-dimensional, 
+    physics-based problems, where the goal is to quantify uncertainty and identify parameters.
   </p>
 
   <section class="project" id="bayesian">
     <h2>Bayesian inverse problems</h2>
     <p class="meta">With Felipe Pereira (University of Texas at Dallas), Marcio Borges (Laboratório Nacional de Computação Científica), and Rafael Guiraldello &middot; Paper in preparation</p>
     <p>
-      <strong>The problem.</strong> Subsurface properties such as permeability cannot be measured everywhere, so they are inferred
-      from limited pressure data. In the Bayesian approach, a Gaussian random field prior is used for the
-      log-permeability field in 2 or 3 spatial dimensions. Using the coefficients (&theta;) of the Karhunen&ndash;Lo&egrave;ve expansion of the discretized random field as the
-      stochastic parameter, the Bayesian inversion then returns a distribution of plausible fields that match the data.
-      However, sampling that distribution with standard Markov chain Monte Carlo (MCMC) methods, such as preconditioned Crank&ndash;Nicolson (pCN), becomes very slow when the field follows a
-      hierarchical distribution, with two additional parameters: &beta;, which controls the field level, and &rho;, which controls the heterogeneity.
+      Subsurface properties such as permeability cannot be measured everywhere, so they must be inferred
+      from limited pressure data. In the Bayesian approach, we place a Gaussian random field prior on the
+      log-permeability field in two or three spatial dimensions. We represent the discretized field with a
+      Karhunen&ndash;Lo&egrave;ve expansion and treat its coefficients (&theta;) as the unknown parameters. The Bayesian
+      inversion then returns a distribution of plausible permeability fields that match the data. Sampling that
+      distribution with standard Markov chain Monte Carlo (MCMC) methods, such as preconditioned
+      Crank&ndash;Nicolson (pCN), becomes very slow, however, when the prior is hierarchical. A hierarchical prior adds
+      two more parameters: &beta;, which sets the overall level of the field, and &rho;, which controls how
+      heterogeneous it is.
     </p>
     <p>
-      <strong>Our goal.</strong> To build an efficient MCMC method, we first recognized that the hierarchical prior suffered from
-      severe non-uniqueness, where several combinations of parameters &theta;, &beta;, and &rho; led to identical simulated data. We
-      sought a construction to alleviate this lack of uniqueness and recover stable MCMC sampling.
+      Our goal was stable, efficient MCMC sampling for the hierarchical model. The obstacle was severe
+      non-uniqueness, since several combinations of &theta;, &beta;, and &rho; lead to identical simulated data,
+      so we sought a construction that removes it.
     </p>
     <p>
-      <strong>Our approach.</strong> We use one additional measurement, the effective permeability of the entire sample,
-      along with an offline curve constructed by Monte Carlo sampling to construct an empirical curve
-      that relates &beta; to a function of &rho;. Eliminating one parameter removes the lack of uniqueness, which hampers convergence
-      of the multi-chain R-hat metric (the potential scale reduction factor), and allows for efficient sampling. I ran experiments on the UT Dallas <code>ganymede2</code> and <code>Juno</code> machines,
-      using SLURM and the Message Passing Interface (MPI), to simulate the Markov chains and analyze posterior metrics, including convergence with R-hat,
-      coverage, reconstruction error, and the posterior fields themselves.
+      Using one additional measurement, the effective permeability of the entire sample,
+      together with an offline curve built by Monte Carlo sampling, we construct an empirical relationship between
+      &beta; and a function of &rho;. This lets us eliminate one parameter, which removes the non-uniqueness that was
+      hampering convergence of the multi-chain R-hat metric (the potential scale reduction factor) and allows for
+      efficient sampling.
+    </p>
+    <p>
+      We tested the method by simulating dozens of Markov chains on HPC infrastructure, examining whether independent chains converged to the same answer, how well the
+      results covered the true values, how closely the reconstructed fields matched the truth, and what the
+      posterior fields themselves looked like.
     </p>
     <ul class="links">
       <li><a class="link" href="https://github.com/Aidan-Gettemy/rho_beta_mcmc_studies">GitHub: Bayesian inversion code</a></li>
@@ -64,26 +71,26 @@
   <section class="project" id="surrogate">
     <h2>Surrogate modeling</h2>
     <p class="meta">With Susan Minkoff, John Zweck, and Elaine Spiller &middot; <em>Wind Energy Science</em>, 2026</p>
-    <p>
-      <strong>The problem.</strong> Erosion on the leading edge of a wind turbine blade degrades performance, and
-      catching it early matters. Designing a machine-learning-based system for continuous condition monitoring by
-      time-series sensor outputs requires a large, comprehensive data set in order to ensure accuracy under
-      different loading conditions and eroded states.
-      Repeatedly querying the full, physics-based simulator quickly becomes impractical. Thus, we adopt a surrogate-model-based approach.
+        <p>
+      Erosion on the leading edge of a wind turbine blade degrades performance and, if it progresses unchecked, leads
+      to expensive repairs. Catching it early calls for continuous condition monitoring, and a machine-learning-based
+      monitoring system must learn from time-series sensor data that covers many loading conditions and eroded
+      states. Generating that data by repeatedly running the full, physics-based simulator, however, quickly becomes
+      impractical.
     </p>
     <p>
-      <strong>Our goal.</strong> We train a multi-dimensional emulator on a carefully selected set of ground-truth simulations.
-      Then, once trained, the emulator is essentially free to generate new samples given a new input setting. We validate this
-      approach by training two competing classifiers: one trained on full simulation data and another purely on emulated data.
-      We find that the well-trained emulator performs as well as the full simulator at this task,
-      despite taking only 1/10,000 of the time to predict a new data point.
+      Our goal was to make this data inexpensive to produce without sacrificing accuracy. We therefore took a
+      surrogate-model-based approach: a multi-dimensional emulator is trained on a carefully selected set of
+      ground-truth simulations, and once trained, it generates new samples for a new input setting at essentially no
+      cost.
     </p>
     <p>
-      <strong>Our approach.</strong> We simulated turbine behavior under varying inflow conditions and erosion
-      severity with OpenFAST. To assist this task, I wrote a new MATLAB framework to automate the simulations and the
-      processing of their output. I then evaluated supervised learning and Gaussian process emulator models for detecting
-      erosion. We envision this as a step toward
-      using emulators in building a full digital-twin for condition monitoring.
+      We generated the ground-truth simulations with OpenFAST under varying inflow conditions and erosion severity,
+      and a new MATLAB framework automated the simulations and the processing of their output. To validate the
+      emulator, we trained two competing classifiers to detect erosion, one on full simulation data and the other
+      purely on emulated data. The well-trained emulator performed as well as the full simulator at this task, while
+      taking several orders-of-magnitude less time to produce a new data point. We see this as a step toward using emulators to
+      build a full digital twin for condition monitoring.
     </p>
     <ul class="links">
       <li><a href="https://doi.org/10.5194/wes-11-3377-2026">Paper (<em>Wind Energy Science</em>)</a></li>
@@ -95,24 +102,27 @@
     <h2>Nacelle transfer function (NTF) modeling</h2>
     <p class="meta">With L. Abbatessa and Nathan Post &middot; Under review</p>
     <p>
-      <strong>The problem.</strong> Wake steering deliberately yaws an upstream turbine to improve the output of the
-      turbines behind it. Operational supervisory control and data acquisition (SCADA) data records measurements such as nacelle heading, wind speed, and power generation.
-      In order to evaluate the changes in power generation of the individual turbines affected by a wake steering move,
-      the changes to sensor measurements must be separated from any bias introduced by the steering itself.
+      Wake steering deliberately yaws an upstream turbine to improve the output of the turbines behind it. To know
+      whether it works, the power generation of each affected turbine has to be compared with and without steering,
+      using operational supervisory control and data acquisition (SCADA) data, which records measurements such as
+      nacelle heading, wind speed, and power generation. The difficulty is that the steering itself biases a
+      turbine's own sensors, so changes in the measurements must be separated from this bias before they can be
+      trusted.
     </p>
     <p>
-      <strong>Our goal.</strong> To evaluate yawed turbine transfer functions from SCADA data, and to understand the
-      biases that creep in when comparing steered and unsteered turbines.
+      Our goal was to evaluate nacelle transfer functions for yawed turbines from SCADA data, and to understand the
+      biases that creep in when steered and unsteered turbines are compared. The key idea is to estimate what a
+      turbine would have measured without steering, so that its actual measurements can be compared against that
+      reference.
     </p>
     <p>
-      <strong>Our approach.</strong> We used filtering to remove implausible data and consensus estimation methods to calculate
-      the sensor measurements that a turbine would see facing the wind from that turbine's neighbors. We train a machine learning model
-      to predict the true sensor measurement during time intervals where the turbines are steered into the wind from the consensus values.
-      With this model, we can then predict the difference between aligned sensor values (from the model) and actual measurements (with bias)
-      during the intervals where the wake steering is active. Our analysis and uncertainty quantification results found signs of
-      sensor bias during steering, but also identified the large spatio-temporal effects across the farm that impact the signal
-      to noise ratio in the data, complicating the analysis of bias itself.
-      I presented the results at NAWEA/WindTech 2025.
+      We first filtered out implausible data and used consensus estimation to calculate the sensor measurements a
+      turbine would see facing the wind from its neighbors. A machine learning model, trained on intervals when
+      turbines were aligned with the wind, then learned to predict the true sensor measurement from those consensus
+      values. Applying it during the intervals when wake steering is active lets us predict the aligned sensor values
+      and compare them with the actual, biased measurements. Our analysis and uncertainty quantification found signs
+      of sensor bias during steering. They also revealed large spatio-temporal effects across the farm that affect
+      the signal-to-noise ratio of the data, which complicates the analysis of bias itself.
     </p>
     <ul class="links">
       <li><a class="link" href="https://wes.copernicus.org/preprints/wes-2025-223/">Manuscript (preprint)</a></li>
