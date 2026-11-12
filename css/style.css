@@ -102,6 +102,7 @@ p { margin: 0 0 1rem; }
 .meta { font-family: var(--sans); font-size: 0.78rem; color: var(--muted); letter-spacing: 0.02em; margin: -0.2rem 0 0.8rem; }
 .links { font-family: var(--sans); font-size: 0.85rem; display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem; margin: 0.4rem 0 0; padding: 0; list-style: none; }
 .todo-link::after { content: " (add link)"; color: var(--muted); font-size: 0.75rem; }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size: 0.88em; background: var(--card); padding: 0.05em 0.3em; border-radius: 3px; }
 
 /* Publications */
 .pubs { list-style: none; padding: 0; margin: 0; }
