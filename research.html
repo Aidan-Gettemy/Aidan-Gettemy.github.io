@@ -89,7 +89,7 @@
       and a new MATLAB framework automated the simulations and the processing of their output. To validate the
       emulator, we trained two competing classifiers to detect erosion, one on full simulation data and the other
       purely on emulated data. The well-trained emulator performed as well as the full simulator at this task, while
-      taking several orders-of-magnitude less time to produce a new data point. We see this as a step toward using emulators to
+      taking several orders of magnitude less time to produce a new data point. We see this as a step toward using emulators to
       build a full digital twin for condition monitoring.
     </p>
     <ul class="links">
@@ -102,8 +102,8 @@
     <h2>Nacelle transfer function (NTF) modeling</h2>
     <p class="meta">With L. Abbatessa and Nathan Post &middot; Under review</p>
     <p>
-      Wake steering deliberately yaws an upstream turbine to improve the output of the turbines behind it. To know
-      whether it works, the power generation of each affected turbine has to be compared with and without steering,
+      Wake steering deliberately yaws an upstream turbine to improve the output of the turbines behind it. To assess wake steering performance,
+      the power generation of each affected turbine has to be compared with and without steering,
       using operational supervisory control and data acquisition (SCADA) data, which records measurements such as
       nacelle heading, wind speed, and power generation. The difficulty is that the steering itself biases a
       turbine's own sensors, so changes in the measurements must be separated from this bias before they can be
@@ -111,8 +111,8 @@
     </p>
     <p>
       Our goal was to evaluate nacelle transfer functions for yawed turbines from SCADA data, and to understand the
-      biases that creep in when steered and unsteered turbines are compared. The key idea is to estimate what a
-      turbine would have measured without steering, so that its actual measurements can be compared against that
+      biases that occur due to the geometry of the sensor placement and the asymmetric flow induced by the rotor during steering.
+      The key idea is to estimate what turbine would have measured without steering, so that its actual measurements can be compared against that
       reference.
     </p>
     <p>
