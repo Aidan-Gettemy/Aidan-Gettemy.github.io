@@ -46,14 +46,13 @@
       heterogeneous it is.
     </p>
     <p>
-      Our goal was stable, efficient MCMC sampling for the hierarchical model. The obstacle was severe
-      non-uniqueness, since several combinations of &theta;, &beta;, and &rho; lead to identical simulated data,
-      so we sought a construction that removes it.
+      We are able to design an efficient MCMC sampling scheme for the hierarchical model. The obstacle was severe
+      non-uniqueness, since several combinations of &theta;, &beta;, and &rho; lead to identical simulated data.
     </p>
     <p>
-      Using one additional measurement, the effective permeability of the entire sample,
-      together with an offline curve built by Monte Carlo sampling, we construct an empirical relationship between
-      &beta; and a function of &rho;. This lets us eliminate one parameter, which removes the non-uniqueness that was
+      In order to remove the issue of non-uniqueness, we added one additional measurement, the effective permeability of the entire sample.
+      This measurement lets us build an offline curve by Monte Carlo sampling, which constructs an empirical relationship between
+      &beta; and &rho;. This lets us eliminate one parameter, which removes the non-uniqueness that was
       hampering convergence of the multi-chain R-hat metric (the potential scale reduction factor) and allows for
       efficient sampling.
     </p>
